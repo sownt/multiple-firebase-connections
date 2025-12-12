@@ -110,12 +110,14 @@ export function FirebaseProjectCard({
 
       <CardContent className="relative">
         <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-2">
-            <User2 className="h-4 w-4 text-muted-foreground" />
-            <span className="text-sm font-medium">
-              {project.user?.displayName} ({project.user?.email})
-            </span>
-          </div>
+          {project.user && (
+            <div className="flex items-center gap-2">
+              <User2 className="h-4 w-4 text-muted-foreground" />
+              <span className="text-sm font-medium">
+                {project.user?.displayName} ({project.user?.email})
+              </span>
+            </div>
+          )}
 
           <div className="flex items-center gap-2">
             <Database className="h-4 w-4 text-muted-foreground" />
